@@ -20,7 +20,7 @@ npm start
 ```
 
 # 기능
--`npm start` 실행시 **nodemon**으로 실행됩니다.
+`npm start` 실행시 **nodemon**으로 실행됩니다.
 
 ## 1. mysql DB
 - **mysql** 데이터베이스가 연동되어 있습니다.
@@ -46,3 +46,8 @@ npm start
 ## 5. ejs
 - 뷰 엔진으로 **ejs**가 사용되었습니다.
 - `/view` 폴더 밑에서 레이아웃과 `/` 페이지에서 나타나는 메인 페이지를 확인 할 수 있습니다.
+
+## 6. CI
+- master 브랜치에 push/pr 시 테스트를 진행하는 **git Action**이 포함되어 있습니다.
+- 해당 파일은 /.github/workflows/ci-workflow.yml 에 있습니다.
+- 파일 안에 참고할 수 있도록 CD 파이프라인도 주석처리 되어 포함되어 있습니다.
