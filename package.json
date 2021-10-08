@@ -1,0 +1,44 @@
+{
+  "name": "backend_hokim",
+  "version": "1.0.0",
+  "description": "gifty",
+  "main": "App.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "mochaClient": "node_modules/.bin/mocha test/controller.client.spec.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hokim2407/boilerplate_nodejs.git"
+  },
+  "author": "hokim",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hokim2407/boilerplate_nodejs/issues"
+  },
+  "homepage": "https://github.com/hokim2407/boilerplate_nodejs#readme",
+  "dependencies": {
+    "axios": "^0.21.4",
+    "chai": "^4.3.4",
+    "connect-session-sequelize": "^7.1.2",
+    "cookie-parser": "^1.4.5",
+    "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-ejs-layouts": "^2.5.1",
+    "express-session": "^1.17.2",
+    "morgan": "^1.10.0",
+    "mysql2": "^2.3.0",
+    "nodemon": "^2.0.12",
+    "path": "^0.12.7",
+    "sequelize": "^6.6.2",
+    "sequelize-cli": "^6.2.0",
+    "swagger-jsdoc": "^6.1.0",
+    "swagger-ui-express": "^4.1.6",
+    "winston": "^3.3.3",
+    "winston-daily-rotate-file": "^4.5.5"
+  },
+  "devDependencies": {
+    "mocha": "^9.1.2"
+  }
+}
