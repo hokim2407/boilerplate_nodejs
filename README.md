@@ -1,37 +1,10 @@
-# Gifty
-http://hokim.gifty4u.com/
-
-# Gifty 어드민 페이지
-http://hokim.gifty4u.com/admin/app
-
-# 2021-10-04 업데이트
-### 1. 사용자측의 Bearer인증이 추가되었습니다.
-헤더로 {Authorization: 'bearer 인증토큰'}을 넘겨줄 경우 사용자가 인증됩니다.
-
-### 2. API 문서에서 사용자 토큰을 쉽게 발급 받을 수 있는 TEST용 API가 추가되었습니다.
-사용자 id를 이용해 테스트용 토큰을 발급 받을 수 있습니다.
-
-### 3. Swagger 문서가 수정되었습니다.
-기존에 각 헤더에 Authorization을 추가하도록 되어있었는데 해당 방식이 헤더를 제대로 넘겨주지 못하는 이슈가 발생했습니다.
-페이지 접속시 오른쪽 상단의 Authorization 버튼을 눌러 한번만 인증해두면 알아서 값을 넘겨주도록 수정되었습니다.
-인증헤더를 사용하는 API는 이름 오른쪽에 자물쇠가 잠겨있으니 참고하시기 바랍니다.
-
-
-# api test시
-1. https
-
- 자체 서명된 ssl로 인증되어 있으므로 프론트 로컬호스트에서 api 를 요청하기 전에 http://hokim.gifty4u.com/ 에 접근해서 thisisunsafe 해주어야 합니다.
- 결제 테스트는 자체서명된 https에서 동작하지 않습니다. http://hokim.gifty4u.com:4000 로 접근해서 테스트해주세요. 
-
-2. http
-
-  http://hokim.gifty4u.com/ 로 접근시 자동으로 https로 리다이렉트 되므로 http://hokim.gifty4u.com:4000 으로 바로 접근해야 합니다.
-
+# Node.js Boilter-Plate 
+Node.js를 간편하게 시작할 수 있는 BoilterPlate 프로젝트입니다.
 
 # 실행 방법
 1. 현재 저장소 클론
 ```
-git clone https://github.com/42seoul-gifty/backend-hokim.git
+git clone https://github.com/hokim2407/boilerplate_nodejs.git
 ```
 
 2. `.env.sample`을 참고해 `.env` 파일 만들기
@@ -41,14 +14,35 @@ git clone https://github.com/42seoul-gifty/backend-hokim.git
 npm install
 ```
 
-4. 시드 생성
-```
-npm run makeSeed
-```
-
-4. 실행
+3. 실행
 ```
 npm start
 ```
 
+# 기능
+-`npm start` 실행시 **nodemon**으로 실행됩니다.
 
+## 1. mysql DB
+- **mysql** 데이터베이스가 연동되어 있습니다.
+- `.env` 파일 안에 `DATABASE`, `DB_USER`, `DB_PASSWORD`, `DB_HOST`, `DB_DIALECT` 를 채웁니다.
+- `/model` 폴더 안에 모델을 작성합니다.(User 모델이 예시로 작성되어 있습니다.)
+- 서버를 시작하면 데이터베이스에 모델이 자동으로 생성됩니다.
+
+## 2. swagger
+- **swagger** 문서가 연동되어 있습니다.
+- `/api-docs`로 접속하면 확인할 수 있습니다.
+- `/swagger` 안에 필요한 정보를 작성합니다. (User API가 예시로 작성되어 있습니다.)
+
+## 3. winston
+- 로그를 작성하는 **winston**이 연동되어 있습니다.
+- `.env` 파일 안에 `NODE_ENV`를 development로 두면 파일이 아니라 콘솔에 로그가 나타납니다.
+- `/logs`에 로그가 저장됩니다.
+
+## 4. mocha
+- API를 테스트하는 **mocha**가 연동되어 있습니다.
+- `/test` 밑에 예시 파일이 있습니다.
+- `npm run mochaClient`를 통해 테스트를 실행시킬 수 있습니다.
+
+## 5. ejs
+- 뷰 엔진으로 **ejs**가 사용되었습니다.
+- `/view` 폴더 밑에서 레이아웃과 `/` 페이지에서 나타나는 메인 페이지를 확인 할 수 있습니다.
